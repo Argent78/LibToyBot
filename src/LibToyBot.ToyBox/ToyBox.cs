@@ -4,7 +4,7 @@ using LibToyBot.Movement;
 using LibToyBot.Reporting;
 using LibToyBot.Spatial;
 
-namespace LibToyBot.ToyBox
+namespace LibToyBot
 {
     public static class ToyBox
     {

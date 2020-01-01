@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Aaron White</Authors>
+    <Description>Service collection extensions for use with .NET Core IoC container.</Description>
   </PropertyGroup>
 
   <ItemGroup>

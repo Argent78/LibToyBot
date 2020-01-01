@@ -46,8 +46,9 @@ namespace LibToyBot.Commands
         {
             try
             {
+                var sanitizedCommandText = Sanitize(commandText);
                 // tokenize the command string on whitespace
-                var cmdTokens = commandText.Split(' ');
+                var cmdTokens = sanitizedCommandText.Split(' ');
 
                 // switch over the first token
                 var firstToken = cmdTokens.FirstOrDefault();
@@ -71,6 +72,11 @@ namespace LibToyBot.Commands
             {
                 return new ActionOutcome(OutcomeStatus.Fail, "The command is invalid");
             }
+        }
+
+        private static string Sanitize(string commandText)
+        {
+            return commandText.ToUpperInvariant();
         }
     }
 }

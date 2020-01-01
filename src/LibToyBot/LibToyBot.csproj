@@ -5,7 +5,7 @@
     <Authors>Aaron White</Authors>
     <Company />
     <Product>LibToyBot</Product>
-    <Description>Toy bot library</Description>
+    <Description>Place, move and turn your robot on a table. Fun for all ages! Batteries not included.</Description>
   </PropertyGroup>
 
   <ItemGroup>

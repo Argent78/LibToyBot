@@ -109,7 +109,7 @@ steps:
 
 - task: DotNetCoreCLI@2
   condition: and(succeeded(), ne(variables['Build.SourceBranchName'], 'master'))
-  displayName: Pack ToyBox Library (Preview)  
+  displayName: Pack DI Library (Preview)  
   inputs:
     command: pack    
     packagesToPack: '**/LibToyBot.DependencyInjection.csproj'

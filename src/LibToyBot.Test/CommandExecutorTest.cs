@@ -82,5 +82,22 @@ namespace LibToyBot.Test
             _mockPositionReporter.Received().Report();
             outcome.Result.ShouldBe(OutcomeStatus.Success);
         }
+
+
+        [Theory]
+        [InlineData("left")]
+        [InlineData("right")]
+        [InlineData("move")]
+        [InlineData("place 1,2,west")]
+        public void TestLowerCaseCommands(string commandText)
+        {
+            _mockMovementProcessor.Turn(Direction.LEFT).Returns(info => new ActionOutcome(OutcomeStatus.Success));
+            _mockMovementProcessor.Turn(Direction.RIGHT).Returns(info => new ActionOutcome(OutcomeStatus.Success));
+            _mockMovementProcessor.Move().Returns(info => new ActionOutcome(OutcomeStatus.Success));
+            _mockMovementProcessor.Place(0, 0, Orientation.EAST).ReturnsForAnyArgs(info => new ActionOutcome(OutcomeStatus.Success));
+            var outcome = _executor.ExecuteCommand(commandText);
+            outcome.Result.ShouldBe(OutcomeStatus.Success);
+        }
+
     }
 }
